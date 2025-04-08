@@ -6,6 +6,10 @@ const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
+  port: process.env.DB_PORT, // Asegúrate de tener esto si usás un puerto distinto
+  ssl: {
+    rejectUnauthorized: false, // 👈 Necesario para Render
+  },
   allowExitOnIdle: true,
 });
 
